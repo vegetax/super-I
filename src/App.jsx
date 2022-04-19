@@ -1,10 +1,22 @@
-import { useState } from "react";
-import Web3login from "./compononet/Web3login";
+import {
+  Navbar,
+  KryptobirdzApp,
+  Footer,
+  FAQ,
+  GameFeature,
+  FeatureList,
+  OnTheWayFeature,
+} from "./compononet";
 
 function App() {
   return (
     <div>
-      <Web3login></Web3login>
+      <Navbar></Navbar>
+      <GameFeature />
+      <OnTheWayFeature />
+      <FeatureList />
+      <FAQ />
+      <Footer />
     </div>
   );
 }

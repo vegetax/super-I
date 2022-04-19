@@ -6,13 +6,12 @@ import ShoppingItems from "../contract/ShoppingItems.json";
 const ShoppingItemsComp = () => {
   const web3 = new Web3(window.web3.currentProvider);
 
-  const [shoppingItems, setShoppingItems] = useState();
-  const [accounts, setCurrentAccount] = useState("");
   const [form, setForm] = useState({ identifier: "", cost: "" });
   const [ItemId, setItemId] = useState(0);
+  const [accounts, setCurrentAccount] = useState("");
 
-  // const [event, setEvent] = useState("");
-
+  // 拉取合约
+  const [contract, setContract] = useState();
   useEffect(() => {
     getContract();
   }, []);
@@ -27,6 +26,8 @@ const ShoppingItemsComp = () => {
       deployedNetwork && deployedNetwork.address
     );
 
+    setContract(shoppingItems); // 创建合约
+
     // 增加event监听
     shoppingItems.events
       .itemOnTheWay({ filter: { ItemState: 1 } })
@@ -34,8 +35,6 @@ const ShoppingItemsComp = () => {
         const add = e.returnValues.ItemId;
         window.alert(`item ${add} has paid, please deliver it! `);
       });
-
-    setShoppingItems(shoppingItems); // 创建合约
   };
 
   // 网页结构####################################################
@@ -55,14 +54,22 @@ const ShoppingItemsComp = () => {
   };
 
   // 合约交互 #########################
+
+  // 拉取当前账户
+  const getAccounts = async () => {
+    const Accounts = await web3.eth.getAccounts();
+    console.log(Accounts);
+  };
+
+  // 查询合约余额
   const getBalance = async () => {
-    console.log(await shoppingItems.methods.getBalance().call());
+    console.log(await contract.methods.getBalance().call());
   };
 
   // 创建item
   const createItem = async (_identifier, _cost) => {
     try {
-      shoppingItems.methods
+      contract.methods
         .createItem(_identifier, _cost)
         .send({ from: accounts[0] })
         .on("transactionHash", function (hash) {
@@ -80,7 +87,7 @@ const ShoppingItemsComp = () => {
   };
   // 查itemlist ##########
   const ItemList = async () => {
-    console.log(await shoppingItems.methods.ItemList(ItemId).call());
+    console.log(await contract.methods.ItemList(ItemId).call());
   };
   // 获取查询ID
   const debugItemlistinput = (e) => {
@@ -90,7 +97,7 @@ const ShoppingItemsComp = () => {
   // event  ########################################
 
   const logevent = async () => {
-    const results = await shoppingItems.getPastEvents("itemOnTheWay", {
+    const results = await contract.getPastEvents("itemOnTheWay", {
       // filter: { ItemId: 2 },
       fromBlock: 0,
     });
@@ -115,6 +122,9 @@ const ShoppingItemsComp = () => {
         </div>
         <div>
           createItem <button onClick={createItem}> BTN</button>
+        </div>
+        <div>
+          <button onClick={getAccounts}> getAccounts</button>
         </div>
         <div>
           <button onClick={logevent}> logEvent</button>

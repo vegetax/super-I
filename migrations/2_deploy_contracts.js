@@ -1,5 +1,5 @@
-const Kryptobrid = artifacts.require("Kryptobrid");
+const Kryptobirdz = artifacts.require("Kryptobirdz");
 
 module.exports = function (deployer) {
-  deployer.deploy(Kryptobrid);
+  deployer.deploy(Kryptobirdz);
 };

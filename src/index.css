@@ -1,0 +1,20 @@
+@tailwind base;
+@layer base {
+  /* 基础组件DIY */
+  div {
+    /* background-color: red; */
+  }
+}
+@tailwind components;
+@layer components {
+  /* 自定义组件group */
+  .btn {
+    /* @apply bg-gray-800; */
+  }
+}
+@tailwind utilities;
+@layer utilities {
+  /* 原生CSS */
+  .btn1 {
+  }
+}

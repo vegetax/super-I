@@ -1,5 +1,5 @@
-// const { assert } = require("chai");
-// require("chai").use(require("chai-as-promised")).should();
+const { assert } = require("chai");
+require("chai").use(require("chai-as-promised")).should();
 
 const Kryptobirdz = artifacts.require("Kryptobirdz");
 
@@ -16,8 +16,11 @@ contract("Kryptobirdz", (accounts) => {
   });
   it("creat a new token", async () => {
     const hx = await kryptobirdz.safeMint(accounts[1], "birdz1");
+    // console.log(hx.logs[0].args);
     const totalsupply = await kryptobirdz.totalSupply();
     assert.equal(totalsupply, 1);
     assert.equal(await kryptobirdz.ownerOf(0), accounts[1]);
+
+    await kryptobirdz.safeMint("0x", "birdz1").should.be.rejected;
   });
 });
