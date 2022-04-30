@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 // import { HiMenuAlt4 } from "react-icons/hi";
 // import { AiOutlineClose } from "react-icons/ai";
 import { FaTheaterMasks } from "react-icons/fa";
 import nftPng from "../images/nft_1.png";
+
+import { TransactionContext } from "../context/TransactionContext";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -12,6 +14,8 @@ const navigation = [
 ];
 
 const Navbar = () => {
+  const { currentAccount, connectWallet } = useContext(TransactionContext);
+
   return (
     <div className="relative bg-primary overflow-hidden h-screen">
       <nav className="relative max-w-7xl mx-auto flex flex-row-reverse items-center justify-between  p-2 sm:px-6">
@@ -22,12 +26,19 @@ const Navbar = () => {
         </div> */}
         {/* collect wallet */}
         <div>
-          <a
-            href="#"
-            className="inline-flex items-center px-4 py-2 mt-4   border-2 text-base font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 "
-          >
-            CONNECT WALLET
-          </a>
+          {currentAccount ? (
+            <div className=" mt-2 py-2 mt-4  text-white font-medium text-base">
+              {currentAccount}
+            </div>
+          ) : (
+            <a
+              href="#"
+              className="inline-flex items-center px-4 py-2 mt-4   border-2 text-base font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 "
+              onClick={connectWallet}
+            >
+              CONNECT WALLET
+            </a>
+          )}
         </div>
       </nav>
       {/* Section:Welcome */}
