@@ -7,113 +7,70 @@ import {
   ScaleIcon,
 } from "@heroicons/react/outline";
 
-import nftPng2 from "../images/nft_2.png";
+import nftPng2 from "../images/task.jpg";
+import nftPng3 from "../images/comparison.jpg";
 
 const transferFeatures = [
   {
     id: 1,
-    name: "Competitive exchange rates",
+    name: "任务",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "一共有四种类型：设计、艺术、程序、市场，所有任务的目的只有一个，就是为NFT赋能",
     icon: GlobeAltIcon,
   },
   {
     id: 2,
-    name: "No hidden fees",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    name: "声望",
+    description: "完成任务获得声望，不仅是影响力的体现，也能点亮NFT上的宝石",
     icon: ScaleIcon,
-  },
-  {
-    id: 3,
-    name: "Transfers are instant",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-    icon: LightningBoltIcon,
   },
 ];
 const communicationFeatures = [
   {
     id: 1,
-    name: "Mobile notifications",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    name: "宝石",
+    description: "每个NFT上都镶嵌着沉睡的宝石，只有声望才能点亮它们.",
     icon: AnnotationIcon,
   },
   {
     id: 2,
-    name: "Reminder emails",
+    name: "版税",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      " 点亮宝石后，NFT的每次交易都将为你带来收益，点亮的宝石越多，获得的版税越多。",
     icon: MailIcon,
   },
 ];
 
 export default function GameFeature() {
   return (
-    <div className="py-16 bg-gray-50 overflow-hidden lg:py-24">
-      <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        <svg
-          className="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
-          width={404}
-          height={784}
-          fill="none"
-          viewBox="0 0 404 784"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="b1e6e422-73f8-40a6-b5d9-c8586e37e0e7"
-              x={0}
-              y={0}
-              width={20}
-              height={20}
-              patternUnits="userSpaceOnUse"
-            >
-              <rect
-                x={0}
-                y={0}
-                width={4}
-                height={4}
-                className="text-gray-200"
-                fill="currentColor"
-              />
-            </pattern>
-          </defs>
-          <rect
-            width={404}
-            height={784}
-            fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)"
-          />
-        </svg>
-
+    <div className="py-32 overflow-hidden ">
+      <div className="relative max-w-7xl mx-auto sm:px-6 ">
         <div className="relative">
-          <h2 className="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            A really playable NFT game
+          <h2 className="text-center text-3xl leading-8 font-extrabold tracking-tight text-black sm:text-4xl">
+            The Sovereign Individual
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
+          <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-black">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            magnam voluptatum cupiditate veritatis in, accusamus quisquam.
+            magnam voluptatum cupiditate veritatis in, accusamus quisquam.Lorem
+            ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </div>
 
         <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="relative">
-            <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-              Transfer funds world-wide
+            <h3 className="text-2xl font-extrabold text-black  tracking-tight sm:text-3xl">
+              CREATE TOGETHER
             </h3>
-            <p className="mt-3 text-lg text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              minima sequi recusandae, porro maiores officia assumenda aliquam
-              laborum ab aliquid veritatis impedit odit adipisci optio iste
-              blanditiis facere. Totam, velit.
+            <p className="mt-3 text-lg text-black ">
+              每个主权个体都可以通过自己的热情和才能为NFT赋能，接取自己擅长的任务
+              ，完成它获得相应的声望。
             </p>
 
             <dl className="mt-10 space-y-10">
               {transferFeatures.map((item) => (
                 <div key={item.id} className="relative">
                   <dt>
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-black">
                       <item.icon className="h-6 w-6" aria-hidden="true" />
                     </div>
                     <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
@@ -138,57 +95,21 @@ export default function GameFeature() {
           </div>
         </div>
 
-        <svg
-          className="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
-          width={404}
-          height={784}
-          fill="none"
-          viewBox="0 0 404 784"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-              x={0}
-              y={0}
-              width={20}
-              height={20}
-              patternUnits="userSpaceOnUse"
-            >
-              <rect
-                x={0}
-                y={0}
-                width={4}
-                height={4}
-                className="text-gray-200"
-                fill="currentColor"
-              />
-            </pattern>
-          </defs>
-          <rect
-            width={404}
-            height={784}
-            fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
-          />
-        </svg>
-
         <div className="relative mt-12 sm:mt-16 lg:mt-24">
           <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="lg:col-start-2">
               <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-                Always in the loop
+                EARN TOGETHER
               </h3>
-              <p className="mt-3 text-lg text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-                ex obcaecati natus eligendi delectus, cum deleniti sunt in
-                labore nihil quod quibusdam expedita nemo.
+              <p className="mt-3 text-lg bg-clip-text   ">
+                随着NFT上宝石被逐个点亮，这不仅使得NFT更加珍贵和特别，还能让你收获永久的版税。
               </p>
 
               <dl className="mt-10 space-y-10">
                 {communicationFeatures.map((item) => (
                   <div key={item.id} className="relative">
                     <dt>
-                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-black">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
@@ -240,7 +161,7 @@ export default function GameFeature() {
               <img
                 className="relative mx-auto"
                 width={490}
-                src={nftPng2}
+                src={nftPng3}
                 alt=""
               />
             </div>

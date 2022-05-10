@@ -10,11 +10,12 @@ import {
 
 function App() {
   return (
-    <div>
+    <div
+      // data-theme="luxury"
+      className="bg-gradient-to-b from-black   to-purple-900"
+    >
       <Navbar />
       <GameFeature />
-      <OnTheWayFeature />
-      <FeatureList />
       <FAQ />
       <Footer />
     </div>

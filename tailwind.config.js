@@ -1,14 +1,25 @@
 module.exports = {
+  // daisyui: {
+  //   styled: true,
+  //   themes: false, //主题关闭
+  //   base: true,
+  //   utils: true,
+  //   logs: true,
+  //   rtl: false,
+  //   prefix: "",
+  //   darkTheme: "dark",
+  // },
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "#202225",
-        secondry: "#5865f2 ",
+        primary: "#6E0B75",
+        secondry: "#4d505e ",
       },
     },
   },
   plugins: [
+    // require("daisyui"), //关闭daisyui插件
     // ...
     // require("@tailwindcss/forms"),
     // require("@tailwindcss/aspect-ratio"),
