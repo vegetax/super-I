@@ -42,13 +42,13 @@ function classNames(...classes) {
 
 export default function FAQ() {
   return (
-    <div className="bg-gradient-to-b    from-purple-900  to-white">
+    <div className="bg-gradient-to-b    from-purple-900    to-purple-700">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+        <div className="max-w-3xl mx-auto divide-y-2 divide-gray-400">
           <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Frequently asked questions
           </h2>
-          <dl className="mt-6 space-y-6 divide-y divide-gray-200">
+          <dl className="mt-6 space-y-6 divide-y divide-gray-400">
             {faqs.map((faq) => (
               <Disclosure as="div" key={faq.question} className="pt-6">
                 {({ open }) => (
@@ -70,7 +70,7 @@ export default function FAQ() {
                       </Disclosure.Button>
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                      <p className="text-base text-gray-500">{faq.answer}</p>
+                      <p className="text-base text-gray-900">{faq.answer}</p>
                     </Disclosure.Panel>
                   </>
                 )}

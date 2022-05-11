@@ -37,7 +37,7 @@ const text = {
   earnTogether_cn:
     "随着NFT上宝石被逐个点亮，这不仅使得NFT更加珍贵和特别，还能让你收获永久的版税。",
   mintDes_en: "We have 5000 Sovereign Individuals. Mint one to join us",
-  mintDes_cn: "一共有5000个Sovereign Individuals NFT，通过铸造来成为我们的一员",
+  mintDes_cn: "总共有5000个Sovereign Individuals NFT，快来加入我们吧",
 };
 const takeReputation = [
   {
@@ -107,7 +107,7 @@ export default function GameFeature() {
       </div>
       {/***mint **/}
       <div className="mt-10 mb-24 max-w-7xl  h-60 mx-auto flex justify-around items-center  shadow-xl bg-yellow-400">
-        <div className=" w-[40%] font-bold italic text-5xl  text-center ">
+        <div className=" w-[30%] font-bold italic text-5xl  text-center ">
           WELCOME TO OUR CLUB
         </div>
         <div className="w-[30%] text-xl font-bold text-center ">

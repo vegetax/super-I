@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className=" relative h-screen  pt-24  bg-gradient-to-b from-black via-black   to-[#160823] ">
-      <nav className=" fixed top-0 left-0  h-16 px-4  w-screen   mx-auto  z-50 bg-black flex   justify-between items-center ">
+      <nav className=" fixed top-0 left-0  h-16 px-20  w-screen   mx-auto  z-50 bg-black flex   justify-between items-center ">
         <div className=" flex  justify-between items-baseline ">
           <div className="pl-4 pr-10  tracking-tight font-extrabold text-2xl text-white">
             Sovereign Individual
@@ -74,7 +74,7 @@ const Navbar = () => {
           ) : (
             <div className="mb-8 my-3 ">
               <div className="  mt-3 mb-4 w-10/12  text-5xl text-white  ">
-                A collection of decorable NFT <br />
+                A collection of decorable NFTs <br />
                 created to
               </div>
               <div className="my-5 cursor-default tracking-tight text-7xl  font-bold  text-purple-600    ">
@@ -93,7 +93,7 @@ const Navbar = () => {
               href="#"
               className=" mx-2 px-4 py-4 text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-400 "
             >
-              creat together
+              Creat Together
             </Link>
             <Link
               to="earn"
@@ -104,7 +104,7 @@ const Navbar = () => {
               href="#"
               className=" mx-2 px-4 py-4 text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-400 "
             >
-              earn together
+              Earn Together
             </Link>
           </div>
         </div>
