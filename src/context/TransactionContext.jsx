@@ -12,6 +12,11 @@ export const TransactionProvider = ({ children }) => {
   const [isLogin, setisLogin] = useState(false); // 设置登陆状态
   const localAccounts = window.localStorage.getItem("local_accounts"); // 将登陆账号存入浏览器中
 
+  const [language, setLanguage] = useState(0); //设置语言   0英语、1汉语
+  const selectLanguage = () => {
+    language == 1 ? setLanguage(0) : setLanguage(1);
+  };
+
   useEffect(() => {
     checkIfWalletIsConnected(); // 检测有没有metamask
     checkIsLogin(); // 检测是否之前有登陆过
@@ -47,7 +52,9 @@ export const TransactionProvider = ({ children }) => {
   };
   ``;
   return (
-    <TransactionContext.Provider value={{ isLogin, signOut, connectWallet }}>
+    <TransactionContext.Provider
+      value={{ isLogin, language, selectLanguage, signOut, connectWallet }}
+    >
       {children}
     </TransactionContext.Provider>
   );

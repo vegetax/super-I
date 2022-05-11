@@ -1,18 +1,10 @@
-import {
-  Navbar,
-  KryptobirdzApp,
-  Footer,
-  FAQ,
-  GameFeature,
-  FeatureList,
-  OnTheWayFeature,
-} from "./compononet";
+import { Navbar, Footer, FAQ, GameFeature } from "./compononet";
 
 function App() {
   return (
     <div
       // data-theme="luxury"
-      className="bg-gradient-to-b from-black   to-purple-900"
+      className=" "
     >
       <Navbar />
       <GameFeature />
