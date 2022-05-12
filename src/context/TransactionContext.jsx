@@ -13,8 +13,9 @@ export const TransactionProvider = ({ children }) => {
   const localAccounts = window.localStorage.getItem("local_accounts"); // 将登陆账号存入浏览器中
 
   const [language, setLanguage] = useState(0); //设置语言   0英语、1汉语
-  const selectLanguage = () => {
-    language == 1 ? setLanguage(0) : setLanguage(1);
+  const selectLanguage = (x) => {
+    setLanguage(x);
+    console.log(x);
   };
 
   useEffect(() => {

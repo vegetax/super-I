@@ -1,4 +1,10 @@
-import { Navbar, Footer, FAQ, GameFeature } from "./compononet";
+import {
+  Navbar,
+  Footer,
+  FAQ,
+  GameFeature,
+  OnTheWayFeature,
+} from "./compononet";
 
 function App() {
   return (
@@ -6,6 +12,7 @@ function App() {
       // data-theme="luxury"
       className=" "
     >
+      <OnTheWayFeature />
       <Navbar />
       <GameFeature />
       <FAQ />

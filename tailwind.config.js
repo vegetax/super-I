@@ -19,7 +19,7 @@ module.exports = {
     },
   },
   plugins: [
-    // require("daisyui"), //关闭daisyui插件
+    require("daisyui"), //daisyui插件
     // ...
     // require("@tailwindcss/forms"),
     // require("@tailwindcss/aspect-ratio"),
