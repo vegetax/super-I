@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-scroll";
 
 import video1 from "../images/5M.mp4";
@@ -23,10 +23,12 @@ const Navbar = () => {
   const { isLogin, signOut, language, connectWallet, selectLanguage } =
     useContext(TransactionContext);
 
+  const [dropdown, setDropdown] = useState(false);
+
   return (
     <div className=" relative h-screen  pt-24  bg-gradient-to-b from-black via-black   to-[#160823] ">
       <nav className=" fixed top-0 left-0  h-16 px-20  w-screen   mx-auto  z-50 bg-black flex   justify-between items-center ">
-        <div className=" flex  justify-between items-baseline ">
+        <div className="h-16 flex  justify-between  items-center ">
           <div className="pl-4 pr-10  tracking-tight font-extrabold text-2xl text-white">
             Sovereign Individual
           </div>
@@ -61,16 +63,14 @@ const Navbar = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="origin-top-right absolute left-0 mt-2 w-28 rounded-md shadow-lg bg-white focus:outline-none">
+              <Menu.Items className="origin-top-right absolute left-0 mt-2 w-28 rounded-md shadow-lg bg-purple-600 focus:outline-none">
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
                       <a
                         href="#"
                         className={classNames(
-                          active
-                            ? "bg-gray-100 text-gray-900"
-                            : "text-gray-700",
+                          active ? "bg-purple-400 " : "text-white",
                           "block px-4 py-2 text-sm"
                         )}
                         onClick={() => selectLanguage(0)}
@@ -84,9 +84,7 @@ const Navbar = () => {
                       <a
                         href="#"
                         className={classNames(
-                          active
-                            ? "bg-gray-100 text-gray-900"
-                            : "text-gray-700",
+                          active ? "bg-purple-400 " : "text-white",
                           "block px-4 py-2 text-sm"
                         )}
                         onClick={() => selectLanguage(1)}
@@ -100,9 +98,7 @@ const Navbar = () => {
                       <a
                         href="#"
                         className={classNames(
-                          active
-                            ? "bg-gray-100 text-gray-900"
-                            : "text-gray-700",
+                          active ? "bg-purple-400 " : "text-white",
                           "block px-4 py-2 text-sm"
                         )}
                         onClick={() => selectLanguage(2)}
@@ -116,18 +112,43 @@ const Navbar = () => {
             </Transition>
           </Menu>
         </div>
-        <div className=" items-center">
+
+        <div className=" h-16 flex  items-center cursor-default ">
           {isLogin ? (
-            <div className=" text-gray-500 font-medium text-base">
-              <span className="mr-4">
-                {window.localStorage.getItem("local_accounts")}{" "}
-              </span>
-              <button
-                className="h-11   px-2 text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-400 "
-                onClick={signOut}
-              >
-                Sign Out
-              </button>
+            <div
+              className=" relative text-gray-500 font-medium "
+              onMouseEnter={() => {
+                setDropdown(true);
+              }}
+              onMouseLeave={() => {
+                setDropdown(false);
+              }}
+            >
+              <div className="h-11 w-28 flex justify-center  leading-10    px-1  font-medium rounded-md text-white bg-purple-600 hover:bg-purple-400  ">
+                <span>
+                  {window.localStorage
+                    .getItem("local_accounts")
+                    .substring(0, 4)}
+                </span>
+                <span>...</span>
+                <span>
+                  {window.localStorage
+                    .getItem("local_accounts")
+                    .substring(
+                      window.localStorage.getItem("local_accounts").length - 4,
+                      window.localStorage.getItem("local_accounts").length
+                    )}
+                </span>
+              </div>
+
+              {dropdown && (
+                <button
+                  className=" absolute top-10 h-11   w-24  px-2 text-base font-medium rounded-md text-white   hover:text-purple-400 "
+                  onClick={signOut}
+                >
+                  Sign Out
+                </button>
+              )}
             </div>
           ) : (
             <button

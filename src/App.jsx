@@ -6,17 +6,20 @@ import {
   OnTheWayFeature,
 } from "./compononet";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
-    <div
-      // data-theme="luxury"
-      className=" "
-    >
-      <OnTheWayFeature />
-      <Navbar />
-      <GameFeature />
-      <FAQ />
-      <Footer />
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route></Route>
+        </Routes>
+        <GameFeature />
+        <FAQ />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { useContext } from "react";
+import React, { useContext, useCallback, useEffect } from "react";
 import {
   AnnotationIcon,
   GlobeAltIcon,
@@ -98,7 +98,7 @@ const gemRoyalty = [
     name_2: "版稅",
 
     description_0:
-      "A protection of the intellectual property rights of each sovereign individual. After lighting up the gems, each transaction of NFT will bring you benefits, the more gems you light up, the higher the royalty rate you will get",
+      "A protection of the intellectual  property rights of each sovereign individual. After lighting up the gems, each transaction of NFT will bring you benefits, the more gems you light up, the higher the royalty rate you will get",
     description_1:
       "点亮宝石后，NFT的每次交易都将为你带来收益，点亮的宝石越多，获得的版税越多",
     description_2:
