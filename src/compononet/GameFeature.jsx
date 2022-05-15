@@ -1,19 +1,13 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { useContext, useCallback, useEffect } from "react";
-import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
-  MailIcon,
-  ScaleIcon,
-} from "@heroicons/react/outline";
+
 import { MdOutlineTask } from "react-icons/Md";
 import { FaMedal, FaRegGem } from "react-icons/fa";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 
 import nftPng2 from "../images/task.jpg";
 import earnVideo from "../images/earn.mp4";
-import togetherPng from "../images/together.jpg";
+import togetherPng from "../images/nfts.png";
 import { TransactionContext } from "../context/TransactionContext";
 //0 英语     1简中   2繁中
 const text = {
